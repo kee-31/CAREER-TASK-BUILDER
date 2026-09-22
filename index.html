@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Career Task Builder</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+
+    <div class="header-content">
+
+        <div>
+            <h1>Career Task Builder</h1>
+            <p>Organize your learning, projects and internship journey</p>
+        </div>
+
+        <button id="themeButton" class="theme-button">🌙</button>
+
+    </div>
+
+</header>
+
+
+<main>
+
+    <!-- DASHBOARD -->
+
+    <section id="dashboard">
+
+        <section class="overview">
+
+            <div class="overview-top">
+
+                <div>
+                    <h2>Career Progress</h2>
+                    <p>Keep moving forward 🚀</p>
+                </div>
+
+                <div class="percentage" id="overallPercentage">
+                    0%
+                </div>
+
+            </div>
+
+            <div class="progress-bar">
+                <div id="overallProgress"></div>
+            </div>
+
+        </section>
+
+
+        <!-- STATISTICS -->
+
+        <section class="stats">
+
+            <div class="stat-card">
+                <span>📋</span>
+                <div>
+                    <h3 id="totalTasks">0</h3>
+                    <p>Total Tasks</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <span>✅</span>
+                <div>
+                    <h3 id="completedTasks">0</h3>
+                    <p>Completed</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <span>⏳</span>
+                <div>
+                    <h3 id="pendingTasks">0</h3>
+                    <p>Pending</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <span>🎯</span>
+                <div>
+                    <h3 id="highPriorityTasks">0</h3>
+                    <p>High Priority</p>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- SEARCH -->
+
+        <div class="search-box">
+
+            <span>🔍</span>
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search your tasks..."
+            >
+
+        </div>
+
+
+        <!-- CAREER CARDS -->
+
+        <section class="career-section">
+
+
+            <!-- TESTING -->
+
+            <div class="career-card">
+
+                <div class="card-top">
+
+                    <div class="card-icon">🧪</div>
+
+                    <span class="category-label">
+                        Testing
+                    </span>
+
+                </div>
+
+                <h2>Manual Testing</h2>
+
+                <p>
+                    Build your software testing skills,
+                    test cases and bug reporting experience.
+                </p>
+
+                <div class="mini-progress">
+
+                    <div class="mini-progress-info">
+                        <span>Progress</span>
+                        <span id="testingPercentage">0%</span>
+                    </div>
+
+                    <div class="mini-bar">
+                        <div id="testingProgress"></div>
+                    </div>
+
+                </div>
+
+                <ul>
+                    <li>SDLC & STLC</li>
+                    <li>Test Cases</li>
+                    <li>Bug Reports</li>
+                    <li>Testing Project</li>
+                    <li>GitHub Upload</li>
+                </ul>
+
+                <button
+                    class="open-button"
+                    data-category="testing"
+                >
+                    Open Tasks →
+                </button>
+
+            </div>
+
+
+            <!-- DATA -->
+
+            <div class="career-card">
+
+                <div class="card-top">
+
+                    <div class="card-icon">📊</div>
+
+                    <span class="category-label">
+                        Analytics
+                    </span>
+
+                </div>
+
+                <h2>Data Analyst</h2>
+
+                <p>
+                    Organize your datasets, analysis,
+                    SQL, Excel and Power BI projects.
+                </p>
+
+                <div class="mini-progress">
+
+                    <div class="mini-progress-info">
+                        <span>Progress</span>
+                        <span id="dataPercentage">0%</span>
+                    </div>
+
+                    <div class="mini-bar">
+                        <div id="dataProgress"></div>
+                    </div>
+
+                </div>
+
+                <ul>
+                    <li>Dataset</li>
+                    <li>Data Cleaning</li>
+                    <li>Excel</li>
+                    <li>SQL</li>
+                    <li>Power BI Dashboard</li>
+                </ul>
+
+                <button
+                    class="open-button"
+                    data-category="data"
+                >
+                    Open Tasks →
+                </button>
+
+            </div>
+
+
+            <!-- INTERNSHIP -->
+
+            <div class="career-card">
+
+                <div class="card-top">
+
+                    <div class="card-icon">💼</div>
+
+                    <span class="category-label">
+                        Career
+                    </span>
+
+                </div>
+
+                <h2>Internship</h2>
+
+                <p>
+                    Track internship applications,
+                    HR contacts and interview progress.
+                </p>
+
+                <div class="mini-progress">
+
+                    <div class="mini-progress-info">
+                        <span>Progress</span>
+                        <span id="internshipPercentage">0%</span>
+                    </div>
+
+                    <div class="mini-bar">
+                        <div id="internshipProgress"></div>
+                    </div>
+
+                </div>
+
+                <ul>
+                    <li>Resume</li>
+                    <li>Find Internships</li>
+                    <li>Apply</li>
+                    <li>Contact HR</li>
+                    <li>Interview</li>
+                </ul>
+
+                <button
+                    class="open-button"
+                    data-category="internship"
+                >
+                    Open Tasks →
+                </button>
+
+            </div>
+
+        </section>
+
+    </section>
+
+
+    <!-- TASK MANAGER -->
+
+    <section
+        class="task-manager"
+        id="taskManager"
+    >
+
+        <div class="task-header">
+
+            <div>
+
+                <button
+                    id="backButton"
+                    class="back-button"
+                >
+                    ← Dashboard
+                </button>
+
+                <h2 id="taskTitle">Tasks</h2>
+
+                <p id="taskDescription">
+                    Manage your tasks
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ADD TASK -->
+
+        <div class="task-controls">
+
+            <input
+                type="text"
+                id="taskInput"
+                placeholder="Task name..."
+            >
+
+            <select id="prioritySelect">
+
+                <option value="low">Low Priority</option>
+                <option value="medium">Medium Priority</option>
+                <option value="high">High Priority</option>
+
+            </select>
+
+            <input
+                type="date"
+                id="dateInput"
+            >
+
+            <button id="addTaskButton">
+                + Add Task
+            </button>
+
+        </div>
+
+
+        <!-- EXTRA DETAILS -->
+
+        <div class="details-inputs">
+
+            <textarea
+                id="notesInput"
+                placeholder="Add notes about this task..."
+            ></textarea>
+
+            <input
+                type="url"
+                id="linkInput"
+                placeholder="GitHub / Project / Reference link"
+            >
+
+        </div>
+
+
+        <!-- FILTER -->
+
+        <div class="filters">
+
+            <button
+                class="filter-button active"
+                data-filter="all"
+            >
+                All
+            </button>
+
+            <button
+                class="filter-button"
+                data-filter="pending"
+            >
+                Pending
+            </button>
+
+            <button
+                class="filter-button"
+                data-filter="completed"
+            >
+                Completed
+            </button>
+
+            <button
+                class="filter-button"
+                data-filter="high"
+            >
+                High Priority
+            </button>
+
+            <button
+                id="clearCompleted"
+                class="clear-button"
+            >
+                Clear Completed
+            </button>
+
+        </div>
+
+
+        <!-- TASK LIST -->
+
+        <div
+            id="taskList"
+            class="task-list"
+        ></div>
+
+
+        <div
+            id="emptyState"
+            class="empty-state"
+        >
+
+            <div>📋</div>
+
+            <h3>No tasks found</h3>
+
+            <p>Add a task to start building your progress.</p>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- VIEW DETAILS MODAL -->
+
+<div
+    id="detailsModal"
+    class="modal"
+>
+
+    <div class="modal-content">
+
+        <button
+            id="closeModal"
+            class="close-modal"
+        >
+            ×
+        </button>
+
+        <h2 id="modalTitle">Task Details</h2>
+
+        <div id="modalDetails"></div>
+
+    </div>
+
+</div>
+
+
+<footer>
+
+    <p>
+        Career Task Builder • Keep learning. Keep building. 🚀
+    </p>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
